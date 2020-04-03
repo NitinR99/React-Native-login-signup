@@ -5,11 +5,10 @@ const { StyleSheet } = React;
 export default {
  centeredView: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 2
+    justifyContent: "center"
   },
   modalView: {
+	
     margin: 20,
     backgroundColor: "white",
     borderRadius: 20,
@@ -35,8 +34,10 @@ containerView: {
 },
 loginScreenContainer: {
   flex: 1,
+	backgroundColor: 'white',
 },
 logoText: {
+	
   fontSize: 40,
   fontWeight: "800",
   marginTop: 150,
@@ -60,21 +61,36 @@ loginFormTextInput: {
   marginBottom: 20,
 
 },
-signupFormTextInput: {
+signupFormcheckbox: {
   height: 43,
+  fontSize: 14,
+  borderRadius: 20,
+  borderWidth: 1,
+  borderColor: '#fff',
+  backgroundColor: '#fff',
+  paddingLeft: 10,
+  marginLeft: '15%',
+  marginRight: '15%',
+  marginTop: 20,
+  marginBottom: 20,
+
+},
+signupFormTextInput: {
+  height: 45,
+	
   fontSize: 14,
   borderRadius: 20,
   borderWidth: 1,
   borderColor: '#eaeaea',
   backgroundColor: '#fafafa',
-  paddingLeft: 10,
+  paddingLeft:5,
   width:'100%',
   marginTop: 5,
   marginBottom: 5,
 
 },
 loginButton: {
-  backgroundColor: '#3897f1',
+  backgroundColor: 'orange',
   borderRadius: 25,
   height: 45,
 	width:95,
@@ -82,7 +98,7 @@ marginLeft:'40%',
   marginTop: 20,
 },
 signupButton: {
-  backgroundColor: '#3897f1',
+  backgroundColor: 'orange',
   borderRadius: 25,
   height: 45,
 	width:95,
@@ -90,7 +106,7 @@ marginLeft:'40%',
   marginTop: 20,
 },
 registerButton: {
-  backgroundColor: '#3897f1',
+  backgroundColor: 'orange',
   borderRadius: 25,
   height: 45,
 	width:95,

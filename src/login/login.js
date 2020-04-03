@@ -2,7 +2,7 @@ import React, { Component, useState } from "react";
 
 import styles from "./style";
 import {Keyboard, Text, View, TextInput, TouchableWithoutFeedback, TouchablHighlight, Alert, KeyboardAvoidingView, Modal} from 'react-native';
-import { Button } from 'react-native-elements';
+import { Button, CheckBox, Divider } from 'react-native-elements';
 
 
 export default class LoginScreen extends Component {
@@ -31,24 +31,37 @@ const { modalVisible } = this.state;
               onPress={() => this.onLoginPress()}
               title="Login"
             />
-            
+            <Divider style={{ backgroundColor: 'orange', padding:1, margin:'10%' }} />
+		<Text style={{textAlign:'center', fontSize: 20}}>   New here?</Text>
 		<Modal
           animationType="fade"
           transparent={true}
           visible={modalVisible}
           onRequestClose={() => {
-            Alert.alert("Modal has been closed.");
+            console.log("Modal has been closed.");
+		this.setModalVisible(false);
           }}
         >
           <View style={[styles.centeredView, this.state.modalVisible ? {backgroundColor: 'rgba(0,0,0,0.5)'} : '']}>
           <View style={styles.modalView}>
             <Text style={styles.logoText}>Sign Up</Text>
-		<TextInput placeholder="Username" placeholderColor="#c4c3cb" style={styles.signupFormTextInput} />
+		<TextInput placeholder="Email" placeholderColor="#c4c3cb" style={styles.signupFormTextInput} />
             	<TextInput placeholder="Password" placeholderColor="#c4c3cb" style={styles.signupFormTextInput} secureTextEntry={true}/>
+		<TextInput placeholder="Repeat Password" placeholderColor="#c4c3cb" style={styles.signupFormTextInput} secureTextEntry={true}/>
+		<CheckBox
+  			center
+ 			 title='I have read and I accept the terms and conditions'
+				style={styles.signupFormcheckbox}
+ 			 checkedIcon='dot-circle-o'
+  			uncheckedIcon='circle-o'
+  			checked={this.state.checked}
+			onPress={() => this.setState({checked: !this.state.checked})}
+		/>
 		<Button
               buttonStyle={styles.registerButton}
               onPress={() => {
                   this.setModalVisible(false);
+			console.log('register the user');
                 }}
               title="Register"
             />
